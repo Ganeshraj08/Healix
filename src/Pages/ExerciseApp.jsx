@@ -1114,6 +1114,32 @@ const ExerciseApp = () => {
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6  animate-slideIn">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-violet-800/50">
+                <Webcam
+                  ref={webcamRef}
+                  videoConstraints={{
+                    facingMode: "user",
+                    width: 640,
+                    height: 480,
+                  }}
+                  audio={false}
+                  className="w-full h-full md:object-cover"
+                  style={{ transform: "scaleX(-1)" }}
+                />
+                <canvas
+                  ref={canvasRef}
+                  className="absolute top-0 left-0 w-full h-full "
+                  width={640}
+                  height={480}
+                />
+                <div className="absolute bottom-0 left-0 right-0 max-md:h-[10px] backdrop-blur-md bg-black/50 p-5">
+                  <p className="text-white  max-md:relative text-center text-m max-md:bottom-3">
+                    {currentExerciseIndex !== -1
+                      ? `Performing: ${workoutPlan[currentExerciseIndex].name}`
+                      : "Get ready for your next exercise"}
+                  </p>
+                </div>
+              </div>
               <div className="space-y-5">
                 <div className="backdrop-blur-sm bg-black/30 rounded-2xl shadow-lg p-6 border border-violet-800/50">
                   <h2 className="text-2xl font-bold text-white mb-5">
@@ -1227,32 +1253,6 @@ const ExerciseApp = () => {
                       );
                     })}
                   </div>
-                </div>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-violet-800/50">
-                <Webcam
-                  ref={webcamRef}
-                  videoConstraints={{
-                    facingMode: "user",
-                    width: 640,
-                    height: 480,
-                  }}
-                  audio={false}
-                  className="w-full h-full object-cover"
-                  style={{ transform: "scaleX(-1)" }}
-                />
-                <canvas
-                  ref={canvasRef}
-                  className="absolute top-0 left-0 w-full h-full "
-                  width={640}
-                  height={480}
-                />
-                <div className="absolute bottom-0 left-0 right-0 max-md:h-[10px] backdrop-blur-md bg-black/50 p-5">
-                  <p className="text-white  max-md:relative text-center text-m max-md:bottom-3">
-                    {currentExerciseIndex !== -1
-                      ? `Performing: ${workoutPlan[currentExerciseIndex].name}`
-                      : "Get ready for your next exercise"}
-                  </p>
                 </div>
               </div>
             </div>
