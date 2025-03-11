@@ -857,12 +857,12 @@ const ExerciseApp = () => {
               VISIONARY <span className="text-violet-400">FITNESS</span>
             </h1>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-md:flex-col ">
             <button
               onClick={() => setShowHistory(true)}
               className="flex items-center gap-2 px-5 py-2.5 bg-violet-500 text-white rounded-lg 
-                                  font-bold uppercase tracking-wider text-xs
-                                  hover:bg-violet-700 transition-all duration-300 max-md:hidden"
+                                  font-bold uppercase  text-xs
+                                  hover:bg-violet-700 transition-all duration-300"
             >
               History
             </button>
