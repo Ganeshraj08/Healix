@@ -1128,7 +1128,7 @@ const ExerciseApp = () => {
                 />
                 <canvas
                   ref={canvasRef}
-                  className="absolute top-0 left-0 w-full h-full "
+                  className="absolute max-md:top-10 max-md:left-5 top-0 left-0 w-full h-full "
                   width={640}
                   height={480}
                 />
